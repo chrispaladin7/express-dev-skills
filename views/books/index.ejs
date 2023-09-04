@@ -6,13 +6,12 @@
     <title>Book List</title>
 </head>
 <body>
-    <h1>Books</h1>
+    <h1>Books Authors</h1>
     <ul>
         <% books.forEach(function(t) { %>
             <li>
-               <a href="/skills/<%= t.id %>"><%= t.skills %></a> 
-                    -
-                <!-- <%= t.done ? 'done' : 'not done' %> -->
+               <a href="/books/<%= t.id %>"><%= t.author %></a> 
+              
             </li>
             <% }); %>
     </ul>

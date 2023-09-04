@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const skillsCtrl = require('../controllers/skills');
+const booksCtrl = require('../controllers/books');
 
 // All path starts with "/todos"
 
 //GET /todos
-router.get('/',skillsCtrl.index);
+router.get('/',booksCtrl.index);
 
 //GET /todos/:id (show Functionality)
-router.get('/:id',skillsCtrl.show)
+router.get('/:id',booksCtrl.show)
 
 module.exports = router;
