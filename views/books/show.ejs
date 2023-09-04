@@ -1,13 +1,13 @@
 <%- include('../partials/header.ejs') %>
         <h3>
             <br>
+            <%= book.title %>
+            <br>
             <%= book.author %>
             <br>
             <%= book.country %>
             <br>
-            <img src="<%= book.imageLink %>" alt="">
-            
-            <br>
             <%= book.language %>
         </h3>
+        <a href="/books/<%= book.id %>/edit">Edit Books</a>
         <%- include('../partials/footer.ejs') %>

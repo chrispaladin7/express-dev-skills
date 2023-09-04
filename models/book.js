@@ -1,65 +1,65 @@
 const books = [
     {
-        id: 12343,
+        id: 123,
+        title: "Things Fall Apart",
         author: "Chinua Achebe",
         country: "Nigeria",
-        imageLink: "images/things-fall-apart.jpg",
         language: "English",
 
     },
     {
-        id: 45343,
+        id: 453,
+        title: "Golden Treasure",
         author: "Hans Christian Andersen",
         country: "Denmark",
-        imageLink: "images/fairy-tales.jpg",
         language: "Danish",
 
     },
     {
-        id: 24344,
+        id: 243,
+        title: "Le Rime",
         author: "Dante Alighieri",
         country: "Italy",
-        imageLink: "images/the-divine-comedy.jpg",
         language: "Italian",
 
     },
     {
-        id: 93434,
+        id: 93,
+        title: "Sense and Sensibility",
         author: "Jane Austen",
         country: "United Kingdom",
-        imageLink: "images/pride-and-prejudice.jpg",
         language: "English",
 
     },
     {
-        id: 52812,
+        id: 528,
+        title: "Le Vendatta",
         author: "Honor de Balzac",
         country: "France",
-        imageLink: "images/le-pere-goriot.jpg",
         language: "French",
 
     },
     {
-        id: 64445,
+        id: 645,
+        title: "Happy Days",
         author: "Samuel Beckett",
         country: "Republic of Ireland",
-        imageLink: "images/molloy-malone-dies-the-unnamable.jpg",
         language: "French, English",
 
     },
     {
-        id: 93488,
+        id: 934,
+        title: "Filocolo",
         author: "Giovanni Boccaccio",
         country: "Italy",
-        imageLink: "images/the-decameron.jpg",
         language: "Italian",
 
     },
     {
-        id: 82327,
+        id: 82,
+        title: "The Happy Prince",
         author: "Jorge Luis Borges",
         country: "Argentina",
-        imageLink: "images/ficciones.jpg",
         language: "Spanish",
 
     }
@@ -67,7 +67,30 @@ const books = [
 
 module.exports = {
     getAll,
-    getOne
+    getOne,
+    create,
+    deleteBook,
+    update
+}
+
+function update(id, updateBook) {
+    id = parseInt(id);
+    const book = books.find(book => book.id === id);
+    // book.book = updateBook.book;
+    Object.assign(book,updateBook);
+}
+
+function deleteBook(id) {
+    id = parseInt(id);
+    const idx = books.findIndex(book => book.id === id);
+    books.splice(idx, 1);
+}
+
+//Add a new book
+function create(book) {
+    //Add an ID
+    books.id = Date.now() % 100000;
+    books.push(book);
 }
 
 //Retrieve all books entries

@@ -1,0 +1,15 @@
+<%- include('../partials/header.ejs') %>
+    <form action="/books/<%= book.id %>?_method=PUT" method="POST">
+
+        <label for="">Title</label><input type="text" value="<%= book.title %>">
+        <br>
+        <label for="">Author</label><input type="text" value="<%= book.author %>">
+        <br>
+        <label for="">Country</label><input type="text" value="<%= book.country %>">
+        <br>
+        <label for="">Language</label><input type="text" value="<%= book.language %>">
+        <br>
+
+        <button type="submit">update</button>
+    </form>
+    <%- include('../partials/footer.ejs') %>
